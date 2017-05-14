@@ -188,6 +188,29 @@ void init(void)
 void draw(void)
 
 {
+int i,j;
+    for (i=0;i<d;i++)
+
+    {
+
+        for (j=0;j<d;j++) {
+
+            if (board[i][j] == 99) 
+            {
+                printf("0");
+}
+            else
+
+           
+{
+                printf("%d ",board[i][j]);
+}
+        }
+
+        printf("\n");
+
+    }
+
 }
 
 
