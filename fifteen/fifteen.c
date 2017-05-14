@@ -168,11 +168,11 @@ void init(void)
 
     }
 
-   
+    //making the last tile completely blank
 
     board[d-1][d-1] = 0;
 
-    
+    // if there are an odd number of tiles, swap 1 and 2
      if ((d * d)%2 == 0)
 
     {
@@ -184,7 +184,9 @@ void init(void)
     }
 }
 
-
+/*
+ * Printig the the board in its current state using draw function.
+ */
 void draw(void)
 
 {
@@ -195,13 +197,13 @@ int i,j;
 
         for (j=0;j<d;j++) {
 
-            if (board[i][j] == 99) 
+            if (board[i][j] == 99)  // checking blank position and printing blank space there
             {
                 printf("0");
 }
             else
 
-           
+            // printing the tiles in descending order
 {
                 printf("%d ",board[i][j]);
 }
@@ -213,10 +215,14 @@ int i,j;
 
 }
 
-
+/*
+ * If tile borders empty space, moves tile and returns true, else
+ * returns false. 
+ */
  bool move(int tile)
 
 {
+//making procedure to move the tile
 
     for (int i = 0; i < d; i++)
 
@@ -244,7 +250,7 @@ int i,j;
 
                 }
 
-             
+                // check if the blank is to the left
 
                 else if (j-1 >= 0 && board[i][j-1] == 0)
 
@@ -318,7 +324,7 @@ bool won(void)
 
          return true;
            
-            if (!(board[i][j]==p)&&!(i==d-1&&j==d-1)) 
+            if (!(board[i][j]==p)&&!(i==d-1&&j==d-1)) //checking if loop matches with p or not
             return false;
             
                 p++;
