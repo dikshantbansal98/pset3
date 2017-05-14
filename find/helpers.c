@@ -1,11 +1,14 @@
-
+/*
+ * helpers.c
+ * Helper functions for Problem Set 3.
+ */
  
 #include <cs50.h>
 
 #include "helpers.h"
 bool search(int value, int values[], int n)
 {
-    
+    // implementing binary search
     if(n<=0)
     {
         return false;
