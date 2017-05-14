@@ -28,22 +28,22 @@ bool search(int value, int values[], int n)
 
 void sort(int values[], int n)
 {
-    
+    // impplementing modified bubble sort
     int i,j,flag,temp;
     for(i=0;i<=n-1;i++)
     {
         flag=0;
         for(j=0;j<=n-2;j++)
         {
-            if(values[j]>values[j+1] )  
+            if(values[j]>values[j+1] )   //comparing term with index j by term with index j+1
             {
                 flag=1;
-                temp=values[j];      
+                temp=values[j];      //swapping if term with jth index is greater than term with j+1 index
                 values[j]=values[j+1];
                 values[j+1]=temp;
             }
         }
-        if(flag==0)      
+        if(flag==0)      // checking if list is sorted already
         break;
     }
     return;
