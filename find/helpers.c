@@ -17,11 +17,11 @@ bool search(int value, int values[], int n)
     low=0;upper=n-1;
     while(low<=upper)
     {
-        mid=(low+upper)/2;
+        mid=(low+upper)/2;          
         if(values[mid]>value)
-            upper=mid-1;
+            upper=mid-1;         //checking in left half
       else if(values[mid]<value)
-            low=mid+1;
+            low=mid+1;           //checking in right half
         else
         return true;
     }
