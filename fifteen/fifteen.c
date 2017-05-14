@@ -217,9 +217,86 @@ int i,j;
  bool move(int tile)
 
 {
-    return true;
-}
 
+    for (int i = 0; i < d; i++)
+
+    {
+
+        for (int j = 0; j < d; j++)
+
+        {
+
+            if (board[i][j] == tile)
+
+            {
+
+                //check if the blank is to the right
+
+                if (j+1 <= d-1 && board[i][j+1] == 0)
+
+                {
+
+                    board[i][j+1] = tile;
+
+                    board[i][j] = 0;
+
+                    return true;
+
+                }
+
+             
+
+                else if (j-1 >= 0 && board[i][j-1] == 0)
+
+                {
+
+                    board[i][j-1] = tile;
+
+                    board[i][j] = 0;
+
+                    return true;
+
+                }
+
+                // checking if blank is above
+
+                else if (i-1 >= 0 && board[i-1][j] ==0)
+
+                {
+
+                    board[i-1][j] = tile;
+
+                    board[i][j] = 0;
+
+                    return true;
+
+                }
+
+                // checking if blank is below
+
+                else if (i+1 <= d-1 && board[i+1][j] == 0)
+
+                {
+
+                    board[i+1][j] = tile;
+
+                    board[i][j] = 0;
+
+                    return true;
+
+                }
+
+            
+
+            }
+
+        }
+
+    }
+
+    return false;
+
+}
 
 
 bool won(void)   
