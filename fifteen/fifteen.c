@@ -302,5 +302,28 @@ int i,j;
 bool won(void)   
 {
 
+        
+
+    if (board[d-1][d-1] != 0)
+  return false;
+  
+     int p=1;
+    for (int i = 0; i < d; i++)
+
+    {
+
+        for (int j = 0; j < d; j++)
+
+        {
+
+         return true;
+           
+            if (!(board[i][j]==p)&&!(i==d-1&&j==d-1)) 
+            return false;
+            
+                p++;
+          }
+
+    }
     return true;
 }
