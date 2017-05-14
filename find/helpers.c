@@ -29,5 +29,22 @@ bool search(int value, int values[], int n)
 void sort(int values[], int n)
 {
     
-   
+    int i,j,flag,temp;
+    for(i=0;i<=n-1;i++)
+    {
+        flag=0;
+        for(j=0;j<=n-2;j++)
+        {
+            if(values[j]>values[j+1] )  
+            {
+                flag=1;
+                temp=values[j];      
+                values[j]=values[j+1];
+                values[j+1]=temp;
+            }
+        }
+        if(flag==0)      
+        break;
+    }
+    return;
 }
